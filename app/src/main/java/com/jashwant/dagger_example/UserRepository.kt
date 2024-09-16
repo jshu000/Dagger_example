@@ -7,8 +7,8 @@ interface UserRepository{
     fun saveUser(email:String,password:String)
 }
 
-class SQLRepository @Inject constructor(){
-    fun saveUser(email:String,password:String){
+class SQLRepository @Inject constructor():UserRepository{
+    override fun saveUser(email:String,password:String){
         Log.d("jashwant", "saveUser: email-")
     }
 }
