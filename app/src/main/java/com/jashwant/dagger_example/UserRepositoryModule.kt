@@ -1,14 +1,15 @@
 package com.jashwant.dagger_example
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
 
 @Module
-class UserRepositoryModule {
+abstract class UserRepositoryModule {
 
-    @Provides
-    fun getSQLRepository(sqlRepository: SQLRepository): UserRepository{
-        return sqlRepository
-    }
+    @Binds
+    abstract fun getSQLRepository(sqlRepository: SQLRepository): UserRepository
+
+
 }
