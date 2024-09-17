@@ -1,5 +1,6 @@
 package com.jashwant.dagger_example
 
+import dagger.BindsInstance
 import dagger.Component
 
 
@@ -11,5 +12,11 @@ interface UserRegistrationComponent {
     fun getEmailService(): EmailService
     */
     fun inject(mainActivity: MainActivity)
+
+
+    @Component.Factory
+    interface Factory{
+        fun create(@BindsInstance retryCount:Int):UserRegistrationComponent
+    }
 
 }

@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val component= DaggerUserRegistrationComponent.builder().build()
+        val component= DaggerUserRegistrationComponent.factory().create(3)
         component.inject(this)
         userRegistrationService.registerUser("jashwant999@gmail.com","11111")
     }
