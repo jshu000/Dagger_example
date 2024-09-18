@@ -10,8 +10,10 @@ interface UserRegistrationComponent {
 
 /*    fun getUserRegistrationService() : UserRegistrationService
 
-    fun getEmailService(): EmailService
     */
+
+    fun getEmailService(): EmailService
+
     fun inject(mainActivity: MainActivity)
 
 
