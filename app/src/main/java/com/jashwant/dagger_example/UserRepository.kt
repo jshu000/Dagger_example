@@ -9,14 +9,16 @@ interface UserRepository{
 }
 
 @Singleton
-class SQLRepository @Inject constructor():UserRepository{
+class SQLRepository @Inject constructor(val analyticsService: AnalyticsService):UserRepository{
     override fun saveUser(email:String,password:String){
         Log.d("jashwant", "saveUser: email-")
+        analyticsService.trackEvent("Saveuser","CREATE")
     }
 }
 
-class FirebaseRepository:UserRepository{
+class FirebaseRepository(val analyticsService: AnalyticsService):UserRepository{
     override fun saveUser(email: String, password: String) {
         Log.d("jashwant", "user saved in firebase")
+        analyticsService.trackEvent("Saveuser","CREATE")
     }
 }
